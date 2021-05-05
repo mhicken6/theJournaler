@@ -1,0 +1,391 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(14,minmax(0,1fr));
+    grid-auto-rows: minmax(0,auto);
+
+    background-image: url(opBackground-01-01.png);
+
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+
+    color:rgb(75, 75, 75);
+}
+
+
+/*login error messages*/
+
+
+
+
+/* What to do main page!! */
+
+#whatToDo{
+    grid-column:1/15;
+    grid-row: auto;
+}
+
+
+/*login screen*/
+
+#loginPage{
+    grid-column:3/12;
+    grid-row: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    grid-auto-rows: minmax(0,auto);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+
+    padding: 2rem;
+}
+
+#loginPage p{
+    grid-column: 2/3;
+    grid-row: auto;
+    
+}
+
+#loginEmail{
+    grid-column: 3/5;
+    grid-row: auto;
+    
+}
+
+#loginPassword{
+    grid-column: 3/5;
+    grid-row: auto;
+}
+
+#loginUser{
+    grid-column: 4/5;
+    grid-row: auto;
+}
+
+/*registration page*/
+#registrationPage{
+    grid-column:3/12;
+    grid-row: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    grid-auto-rows: minmax(0,auto);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+
+    padding: 2rem;
+}
+
+#registrationPage p{
+    grid-column: 1/3;
+    grid-row: auto;
+}
+
+#firstName{
+    grid-column: 3/5;
+    grid-row: auto;
+}
+
+#lastName{
+    grid-column: 3/5;
+    grid-row: auto;
+}
+
+#registerEmail{
+    grid-column: 3/5;
+    grid-row: auto;
+}
+
+#registerPassword{
+    grid-column: 3/5;
+    grid-row: auto;
+}
+
+#submitNewUser{
+    grid-column: 4/5;
+    grid-row:auto;
+    
+}
+
+
+
+#mainTitle{
+    grid-column: 2/7;
+    grid-row: auto;
+    text-align: left;
+
+    font-family: atocha, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #DACDC4;
+    font-size: 3rem;
+}
+
+#grayTop{
+    grid-column: 1/15;
+    grid-row: auto;
+    background-color: rgba(128, 128, 128, 0.671);
+    padding: 3rem;
+    margin: 0;
+}
+
+#quote{
+    
+    font-family: atocha, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 1.5rem;
+    color: white;
+}
+
+#app{
+    
+    grid-column: 2/14;
+    grid-row: auto;
+
+    margin-top: 3%;
+    
+    display: grid;
+    
+    grid-template-columns: repeat(14,minmax(0,1fr));
+    grid-auto-rows: minmax(0,auto);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+#journalEntry{
+    grid-column: 2/10;
+    grid-row: 2;
+
+    display: flex;
+    
+}
+
+
+
+textarea{
+    margin-left:15%;
+    height: 45vh;
+    width: 58vw;
+    border-color: rgba(128, 128, 128, 0.671);
+
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    border-radius: 15px;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+input{
+    border-color:rgba(128, 128, 128, 0.671);
+    margin-left: 15%;
+    border-width: .25px;
+    height: 3vh;
+    border-style: solid;
+    border-radius: 15px;
+
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px;
+    border-radius: 9px
+}
+
+input:focus{
+    outline:none;
+}
+
+p{
+    margin-left: 15%;
+
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+#title{
+    margin-bottom: 25%;
+}
+
+#submitNewEntry{
+    margin-left: 1025%;
+    width: max-content;
+    align-content: flex-end;
+}
+
+#editEntry{
+    margin-left: 1025%;
+    width: max-content;
+    align-content: flex-end;
+}
+
+
+#newEntryButton{
+    grid-column:3/12;
+    grid-row: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    grid-auto-rows: minmax(0,auto);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+   
+}
+
+#newEntryButton ul{
+    grid-column: 1/6;
+    grid-row: auto;
+
+    
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+#newEntryButton ul li{
+    margin-top: 3vh;
+    margin-right: 3vh;
+}
+
+#homeEditButton{
+    font-size: .75rem;
+    padding-left: 5%;
+    margin-left: 50%;
+}
+
+#homeDeleteButton{
+    font-size: .75rem;
+    padding-left: 2%;
+}
+
+
+
+button{
+    height: 6vh;
+    width: fit-content;
+    padding: 1rem;
+
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    border: none;
+    background-color: #F1E0D5;
+
+    border-radius: 50px;
+
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover{
+    background-color: rgba(128, 128, 128, 0.671);
+    color:white;
+}
+
+#myJournal{
+    display:none;
+}
+
+#sideBarJournalList{
+    background-color:#f1e0d5b9;
+    grid-column: 11/15;
+
+    border-radius: 15px;
+
+}
+
+h3{
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#sideHeader{
+    margin-left: 15%;
+    margin-bottom: 0;
+}
+
+ul li{
+    list-style: none;
+    text-decoration: none;
+
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+    margin-bottom: 10%;
+}
+
+#hr2{
+    border-style: solid;
+    border-width: .025px;
+    margin-right: 15%;
+    border-color:rgba(128, 128, 128, 0.671);
+}
+
+#editButton{
+    margin-left: 15%;
+    font-family: forma-djr-deck, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+
+    font-size: .75rem;
+    text-decoration: underline;
+
+}
+
+#deleteButton{
+    margin-left: 5%;
+    font-family: forma-djr-deck, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+
+    font-size: .75rem;
+    text-decoration: underline;
+}
+
+#addEntry{
+    grid-column: 5/6;
+    grid-row: auto;
+    
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+li.homeJournalList{
+    margin-bottom: 30px;
+}
+
+div #clientPrintedErrorMessages{
+    grid-column: 2/6;
+    grid-row: auto;
+
+    width: 20vw;
+}
+
+#problemText{
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

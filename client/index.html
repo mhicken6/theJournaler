@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ion7dmc.css"> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</header>
+
+    
+    <h1 id="mainTitle">The Journaler</h1> 
+    
+    <div id="app">
+
+        <div id="logoutButton" v-if="logoutButton">
+            <button id="wantLogout" v-on:click="wantLogout">Logout</button>
+        </div>
+
+        <div id="whatToDo" v-if="whatToDo">
+            <button id="wantLogin" v-on:click="wantLogin">I Already Have An Account</button>
+            
+            <button id="wantRegister" v-on:click="wantRegister">Register For An Account</button>
+        </div>
+
+        <div id="registrationPage" v-if="registrationPage">
+            
+            <div id="loginPrintedErrorMessages" v-if="errorMessage.length > 0">
+                <ul>
+                    <div id="loginErrorText">There was a problem!</div>
+                    <li v-for="error in errorMessage">{{ error }}</li>
+                </ul>
+            </div>
+
+            <p>First Name:</p><input id="firstName" type="text" v-model="firstName"><br>
+            <p>Last Name:</p><input id="lastName" type="text" v-model="lastName"><br>
+            <p>Email/Username:</p><input id="registerEmail" type="email" v-model="email"><br>
+            <p>Password:</p><input id="registerPassword" type="password" v-model="plainPassword"><br>
+
+            <button id="submitNewUser" v-on:click="submitNewUser">Create Account</button>
+        </div>
+        
+        <div id="loginPage" v-if="loginPage">
+            <div v-if="errorMessage.length > 0">
+                <ul>
+                    <div id="loginErrorText">There was a problem!</div>
+                    <li v-for="error in errorMessage">{{ error }}</li>
+                </ul>
+            </div>
+
+            <p>Username:</p><input id="loginEmail" type="email" v-model="loginEmail"><br>
+            <p>Password:</p><input id="loginPassword" type="password" v-model="loginPassword"><br>
+
+            <button id="loginUser" v-on:click="loginUser">Login</button>
+        </div>
+
+        <div id="editJournlEntry" v-if="editing">
+            <p>Date:</p><input id="date" type="date" v-model="editEntry.date"><br>
+            <p>Title:</p><input id="title" type="text" v-model="editEntry.title"><br>
+            <textarea id="fullTextEntry" v-model="editEntry.words">Start Writing...</textarea><br>
+            <button id="editEntry" v-on:click="updateEntry">Update Journal Entry</button>
+        </div>
+        
+        
+
+        
+        <div id="journlEntry" v-if="addMode">
+            
+            <div id="clientPrintedErrorMessages" v-if="errorMessage.length > 0">
+                <ul>
+                    <div id="problemText">There was a problem!</div>
+                    <li v-for="error in errorMessage">{{ error }}</li>
+                </ul>
+            </div>
+            
+            <p>Date:</p><input id="date" type="date" v-model="entryDate"><br>
+            <p>Title:</p><input id="title" type="text" v-model="entryTitle"><br>
+            <textarea id="fullTextEntry" v-model="entryWords">Start Writing...</textarea><br>
+            <button id="submitNewEntry" v-on:click="submitNewEntry">Add To My Journal</button>
+        </div>
+
+        
+
+    
+
+        <div id="newEntryButton" v-if="homepage">
+            
+            <ul>
+                <li class="homeJournalList" v-for="entry in entries"><strong>{{ entry.date }}</strong> | {{ entry.title }} 
+                    <a id="homeEditButton" v-on:click="editJournalEntry(entry)"><i class="fas fa-edit"></i></a>
+                    <a id="homeDeleteButton" v-on:click="removeEntry(entry)"><i class="fas fa-trash"></i></a> <hr id="hr1">
+                    
+                </li>
+            </ul>
+            <button id="addEntry" v-on:click="addEntry">New Journal Entry</button>
+            
+        </div>
+        
+        <div id="sideBarJournalList" v-if="sidebar">
+            <h3 id="sideHeader">Previous Entries</h3>
+              
+            
+            <ul id="entryList">
+                <li class="entry" v-for="entry in entries">{{ entry.date }} 
+                    <a id="editButton" v-on:click="editJournalEntry(entry)"><i class="fas fa-edit"></i></a>
+                    <a id="deleteButton" v-on:click="removeEntry(entry)"><i class="fas fa-trash"></i></a>
+                    <div v-if="currentEntry">
+                        Date: {{ currentEntry.date }} 
+                        Title: {{ currentEntry.title }}
+                        Entry: {{ currentEntry.words }} 
+                    </div><hr id="hr2">
+                </li>    
+            </ul>
+        </div>
+
+        
+        
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+
+
+
+</html>
